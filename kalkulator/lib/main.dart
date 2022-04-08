@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kalkulator/ui.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'kalkulator',
       theme: ThemeData(),
-      home: Calculator(),
+      home: CalculatorPage(),
     );
   }
 }
@@ -31,9 +32,11 @@ class _CalculatorState extends State<Calculator> {
 
   int result = 0, angka1 = 0, angka2 = 0;
   void plus() {
+    print(angka.text);
     angka1 = int.parse(angka.text);
     result = result + angka1;
     angka1 = 0;
+    angka.text = "";
     print(result);
   }
 
